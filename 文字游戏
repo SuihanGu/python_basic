@@ -1,0 +1,51 @@
+print('==============欢迎来到游戏《西游记》===============')
+print('请选择你的身份：')
+print('       1.唐僧')
+print('       2.白骨精')
+print('请选择[1-2]：')
+a=input()
+if a == '1':
+    print('你已经选择了 1 ，你将以唐僧的身份进行游戏！')
+elif a > '2':
+    print('玩呢！！！！就你，唐僧！')
+else:
+    print('你竟然选择了白骨精，太不要脸了，系统将自动分配身份')
+print('='*50)
+life = 2
+attack = 2
+boss_life = 10
+boss_attack = 10
+while True :
+    print(f'唐僧，你的生命值是 {life} ,你的攻击力是 {attack} ')
+    print('='*50)
+    print('请选择操作：')
+    print('       1.练级')
+    print('       2.打boss')
+    print('       3.逃跑')
+    choose = input('请选择操作[1-3]:')
+    if choose == '1' :
+        life +=2
+        attack += 2
+        print(f'唐僧恭喜你升级了，你的生命值是 {life} ,你的攻击力是 {attack} ')
+        print('=' * 50)
+    elif choose == '2' :
+        print('唐僧攻击了白骨精')
+        boss_life -= attack
+        if boss_life <= 0 :
+            print(f'白骨精受到了{attack}点伤害，游戏结束！')
+            break
+        else :
+            life -= boss_attack
+            print('白骨精攻击了唐僧')
+            if life <= 0:
+                print(f'你受到了{boss_attack}点伤害，重伤不治。')
+                print('Game Over')
+                break
+            print('=' * 50)
+    elif choose == 3 :
+        print('唐僧一扭头，撒腿就跑！')
+        print('Game Over')
+        break
+    else :
+        print('用户你的输入有误，请重新输入！！！')
+        print('=' * 50)
