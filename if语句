@@ -1,0 +1,28 @@
+'''a = input ('请输入任意整数')
+b = int (a)
+if b%2==0:
+    print(a+'是偶数')
+else:
+    print(a+'是奇数')
+c=input('请输入年份')
+d=int(c)
+if d%4==0 and d%100!=0 or d%400:
+    print('是闰年')
+else:
+    print('是平年')
+'''
+
+a = 1
+b = 0
+c = 0
+while a < 10:
+    while b < 10:
+        while c < 10:
+            if a**3+b**3+c**3 == a*100+b*10+c:
+                print(a*100+b*10+c)
+            c += 1
+        b += 1
+        c = 0
+    a += 1
+    b = 0
+    c = 0
